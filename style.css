@@ -1,0 +1,70 @@
+html {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  height: 300vh;
+}
+
+img, .img {
+  display: block;
+  width: 100%;
+  height: 1000px;
+}
+
+.img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-image: url(red.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#red {
+  position: absolute;
+  background-image: url(red.jpg);
+  height: 900px;
+}
+
+#white {
+  position: absolute;
+  background-image: url(white.jpg);
+  height: 1300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#white h1 {
+  position: relative;
+  display: block;
+  color: red;
+  font-family: sans-serif;
+  z-index: 100;
+}
+
+#black {
+  position: fixed;
+  background-image: url(black.jpg);
+}
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+/*# sourceMappingURL=style.css.map */
