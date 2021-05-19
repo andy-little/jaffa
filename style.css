@@ -1,5 +1,6 @@
 nav {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,7 +16,8 @@ nav {
   background-color: #f35d2a;
   border-bottom: 5px solid black;
   z-index: 900;
-  font-size: 1.3em;
+  font-size: 1em;
+  font-size: clamp(1em, 1.5vw, 1.3em);
 }
 
 nav .nav-img {
@@ -116,12 +118,12 @@ img {
   width: 100%;
   background-position: center;
   background-attachment: fixed;
+  background-position-y: -80px;
   background-repeat: no-repeat;
   height: 50em;
 }
 
 #orange {
-  position: absolute;
   background-image: url(orange.jpg);
   height: 900px;
   background-color: #f35d2a;
@@ -172,12 +174,8 @@ img {
 }
 
 #black {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 200%;
   background-image: url(black.jpg);
   background-color: #000;
-  z-index: 100;
 }
 
 .contact {
@@ -200,6 +198,10 @@ img {
   padding: 1em;
   height: 17em;
   width: 100%;
+  border: 5px solid white;
+  border-radius: 6px;
+  margin-bottom: 40vh;
+  margin-top: -15vh;
 }
 
 .contact-text, .contact-email, .contact-number, .contact-header {
@@ -221,8 +223,7 @@ img {
   margin-left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  border: 5px solid white;
-  border-radius: 6px;
+  z-index: 900;
 }
 
 .contact-links {

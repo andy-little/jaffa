@@ -8,7 +8,7 @@ $orange: #f35d2a;
 $hero-height: 50em;
 
 nav {
-    position: relative;
+    position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,7 +18,8 @@ nav {
     background-color: $orange;
     border-bottom: 5px solid black;
     z-index: 900;
-    font-size: 1.3em;
+    font-size: 1em;
+    font-size: clamp(1em, 1.5vw, 1.3em);
     .nav-img {
         max-width: 908px;
         width: 50%;
@@ -104,14 +105,13 @@ img {
     left: 0;
     width: 100%;
     background-position: center;
-    //background-size: 85vw;
     background-attachment: fixed;
-    //background-position-y: -80px;
+    background-position-y: -80px;
     background-repeat: no-repeat;
     height: $hero-height;
 }
 #orange {
-    position: absolute;
+    //position: absolute;
     background-image: url(orange.jpg);
     height: 900px;// not good
     background-color: $orange;
@@ -121,6 +121,7 @@ img {
     position: relative;
     background-image: url(white.jpg);  
     background-color: white;
+    //height: $hero-height;// not good
     display: flex;
     align-items: center;
     justify-content: center;
@@ -144,6 +145,7 @@ img {
         font-weight: 400;
         z-index: 200;
         line-height: 1.4;
+        
         text-transform: uppercase;
         span {
             font-size: 4.2rem;
@@ -157,11 +159,12 @@ img {
     }
 }
 #black {
-    position: sticky;
-    top: 200%;
+    //position: sticky;
+    //top: 220%;
     background-image: url(black.jpg);
-    background-color: #000; 
-    z-index: 100;
+    background-color: #000;
+
+    
 }
 .contact {
     
@@ -176,6 +179,11 @@ img {
     padding: 1em;
     height: 17em;
     width: 100%;
+    border: 5px solid white;
+    border-radius: 6px;
+    margin-bottom: 40vh;
+    margin-top: -15vh;
+   
     
 
     &-text, &-email, &-number, &-header {
@@ -195,8 +203,7 @@ img {
         top: 150em;
         margin-left: 50%;
         transform: translateX(-50%);
-        border: 5px solid white;
-        border-radius: 6px;
+        z-index: 900;
         
         
     }
