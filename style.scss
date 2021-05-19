@@ -1,5 +1,67 @@
+
+/////////////////////////////////////////////
+//import roboto and make font-face for MADE//
+/////////////////////////////////////////////
+
+
 $orange: #f35d2a;
 $hero-height: 50em;
+
+nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    background-color: $orange;
+    border-bottom: 5px solid black;
+    z-index: 900;
+    font-size: 1.3em;
+    .nav-img {
+        max-width: 908px;
+        width: 50%;
+        height: 93px;
+        background-image: url(banner-sm.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-origin: right;
+        border-right: 5px solid black;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        margin-right: 5%;
+        a{
+            transition: color 300ms ease-in-out;
+            &:hover, &.selected {
+                color: white;
+            }
+        }
+
+    }
+    .nav-mascot {
+        position: absolute;
+        top: 6px;
+        left: 12%;
+        
+    }
+    .nav-insta {
+        position: relative;
+        margin-left: 100%;
+        transform: translateY(-110%);
+        display: inline-block;
+        font-size: 2.5rem;
+        color: white;
+        transition: color 300ms ease-in-out;
+        &:hover {
+            color: black;
+        }
+
+    }
+}
 
 html {
     margin: 0;
@@ -10,12 +72,18 @@ html {
 a, a:hover, a:visited {
     
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
     color: inherit;
     
 }
 h1, h2, h3, h4, p {
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
+h1, h2 {
+    font-family: 'MADE GoodTime Grotesk', sans-serif;
+    letter-spacing: 4px;
+}
+
 h3 {
     font-size: 1.3em;
     font-weight: 300;
@@ -26,28 +94,26 @@ body {
     background-color: black;
 }
 
-img, .img {
+img {
     display: block;
-    width: 100%;
-    height: $hero-height;
+    max-width: 100%;
+    
 }
 .img {
-    
     top: 0;
     left: 0;
     width: 100%;
-    background-image: url(red.jpg);
     background-position: center;
+    //background-size: 85vw;
     background-attachment: fixed;
-    background-position-y: -80px;
+    //background-position-y: -80px;
     background-repeat: no-repeat;
-    //background-size: 100vw;
-    //background-size: cover;
+    height: $hero-height;
 }
 #orange {
     position: absolute;
     background-image: url(orange.jpg);
-    height: $hero-height;// not good
+    height: 900px;// not good
     background-color: $orange;
     
 }
@@ -55,7 +121,6 @@ img, .img {
     position: relative;
     background-image: url(white.jpg);  
     background-color: white;
-    height: $hero-height;// not good
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,21 +131,25 @@ img, .img {
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: rgba(#fff, .85);
+        background-color: rgba(#fff, .80);
     }
     h1 {
         position: relative;
         display: block;
-        font-size: 3.5rem;
-        max-width: 38rem;
+        font-size: 3.3rem;
+        //color: rgb(44, 44, 44);
+        color: $orange;
+        max-width: 41rem;
         text-align: center;
         font-weight: 400;
         z-index: 200;
-        letter-spacing: 4px;
-        line-height: 1.6;
+        line-height: 1.4;
         text-transform: uppercase;
         span {
-            font-weight: 600;
+            font-size: 4.2rem;
+            //color: black;
+            color: $orange;
+            line-height: 1.6;
         }
         
        
@@ -117,7 +186,7 @@ img, .img {
         color: white;
     }
     &-header {
-        font-size: 2.5em;
+        font-size: 2.7em;
         
     }
     &-container {
@@ -126,6 +195,37 @@ img, .img {
         top: 150em;
         margin-left: 50%;
         transform: translateX(-50%);
+        border: 5px solid white;
+        border-radius: 6px;
         
+        
+    }
+    &-links {
+        max-width: 29rem;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-size: 1.2rem;
+        a {
+            &:hover {
+                color: black;
+                .fas, .fab {
+                    color: black;
+                }
+            }
+            .fas, .fab {
+                display: inline-block;
+                font-size: 1.5rem;
+                color: white;
+                margin-right: .4em;
+
+            }
+
+        }
+        a, .fab, .fas {
+            transition: color 300ms ease-in-out;
+        }
     }
 }
