@@ -5,19 +5,19 @@
 
 
 $orange: #f35d2a;
-$hero-height: 50em;
+$hero-height: 80vh;
 
 nav {
     position: sticky;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 0%;
+    top: 0;
     left: 0;
     width: 100%;
     background-color: $orange;
     border-bottom: 5px solid black;
-    z-index: 900;
+    z-index: 600;
     font-size: 1em;
     font-size: clamp(1em, 1.5vw, 1.3em);
     .nav-img {
@@ -35,6 +35,7 @@ nav {
         justify-content: space-around;
         width: 40%;
         margin-right: 5%;
+        
         a{
             transition: color 300ms ease-in-out;
             &:hover, &.selected {
@@ -47,6 +48,7 @@ nav {
         position: absolute;
         top: 6px;
         left: 12%;
+        max-width: 100%;
         
     }
     .nav-insta {
@@ -91,8 +93,12 @@ h3 {
 }
 body {
     margin: 0;
-    height: 150em;
+    //height: 150em;
     background-color: black;
+    overflow: visible;
+    &.locked {
+        overflow: hidden;
+    }
 }
 
 img {
@@ -105,15 +111,15 @@ img {
     left: 0;
     width: 100%;
     background-position: center;
+    //background-size: 85vw;
+    background-size: unquote("min(160vh, 130%)");
     background-attachment: fixed;
-    background-position-y: -80px;
+    //background-position-y: -80px;
     background-repeat: no-repeat;
     height: $hero-height;
 }
 #orange {
-    //position: absolute;
     background-image: url(orange.jpg);
-    height: 900px;// not good
     background-color: $orange;
     
 }
@@ -121,7 +127,6 @@ img {
     position: relative;
     background-image: url(white.jpg);  
     background-color: white;
-    //height: $hero-height;// not good
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,9 +143,11 @@ img {
         position: relative;
         display: block;
         font-size: 3.3rem;
+        font-size: clamp(2.1rem, 4.5vw, 3.3rem);
         //color: rgb(44, 44, 44);
         color: $orange;
         max-width: 41rem;
+        width: 90%;
         text-align: center;
         font-weight: 400;
         z-index: 200;
@@ -149,18 +156,15 @@ img {
         text-transform: uppercase;
         span {
             font-size: 4.2rem;
+            font-size: clamp(3rem, 6vw, 4.4rem);
             //color: black;
             color: $orange;
             line-height: 1.6;
         }
-        
-       
-               
     }
 }
+
 #black {
-    //position: sticky;
-    //top: 220%;
     background-image: url(black.jpg);
     background-color: #000;
 
@@ -180,30 +184,31 @@ img {
     height: 17em;
     width: 100%;
     border: 5px solid white;
-    border-radius: 6px;
-    margin-bottom: 40vh;
-    margin-top: -15vh;
-   
+    border-radius: 6px;   
     
 
-    &-text, &-email, &-number, &-header {
+    &-text, &-email, &-number, &-header, &-insta {
         text-align: center;
         line-height: 1.6;
         max-width: 20rem;
         margin: 0;
         color: white;
-    }
-    &-header {
-        font-size: 2.7em;
+        font-size: clamp(.9rem, 4vw, 1.25rem);
         
     }
+    
+    &-header {
+        font-size: 2.3em;
+        font-size: clamp(1.8rem, 6.5vw, 2.6rem);
+    }
+
     &-container {
         position: absolute;
         width: 80%;
-        top: 150em;
+        //top: 150em;
         margin-left: 50%;
         transform: translateX(-50%);
-        z-index: 900;
+        z-index: 400;
         
         
     }
@@ -214,7 +219,15 @@ img {
         justify-content: space-between;
         align-items: center;
         color: white;
-        font-size: 1.2rem;
+        /////////////////////////////
+        @media screen and (max-width: 42em) {
+            flex-direction: column;
+            > * {
+                margin-top: .3em;
+            }
+        /////////////////////////////
+        }
+        
         a {
             &:hover {
                 color: black;
@@ -235,4 +248,70 @@ img {
             transition: color 300ms ease-in-out;
         }
     }
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    z-index: 500;
+    pointer-events: none;
+    transition: opacity 300ms ease-in-out;
+    &.active {
+        opacity: 1;
+    }
+    
+}
+
+////mobile
+
+@media screen and (max-width: 51.5em) {
+    .nav, nav {
+        &-links {
+            display: none !important;
+        }
+        &-hamburger {
+            margin-right: 2em;
+    
+            > span {
+                //position: relative;
+                display: block;
+                width: 26px;
+                height: 2px;
+                background:white;
+                transform-origin: 3px 1px;
+                margin-bottom: 5px;
+                transition: 250ms ease-in-out;
+            }
+        }
+        
+    
+            // Hamburger Open
+        &.open {
+
+            .nav-hamburger {     
+                > span:first-child {
+                    transform: rotate(45deg);
+                }
+    
+                > span:nth-child(2) {
+                    opacity: 0;
+                }
+    
+                > span:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 33em) {
+    nav {
+        position: static;
+    }
+
 }

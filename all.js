@@ -1,11 +1,10 @@
-
-
-window.onload = () => {
-    const red = document.querySelector('#red');
-    const imgHeight = red.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-        red.style.height = `${imgHeight - window.pageYOffset}px`;
-        
-    });
-};
+document.addEventListener('DOMContentLoaded', () => {
+    const mobHam = document.querySelector('.nav-hamburger');
+    const nav = document.querySelector('nav');
+    const overlay = document.querySelector('.overlay');
+    mobHam.onclick = () => {
+        nav.classList.toggle('open');
+        overlay.classList.toggle('active');
+        document.querySelector('body').classList.toggle('locked');
+    } 
+})
