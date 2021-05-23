@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/scss/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/scss/all.css' %}">
+    <script src="{% static 'main/all.js' %}"></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="overlay"></div>
+    <nav>
+        <div class="nav-img"></div>
+        <div class="nav-mascot">
+            <img src="{% static 'main/images/mr-jaffa.png' %}" alt="">
+           <!--  <a href="https://www.instagram.com/jaffalondon"><i class="nav-insta fab fa-instagram"></i></a> -->
+        </div>
+       
+        <div class="nav-links">
+            <a class="selected" href="">Home</a>
+            <a href="">Equipment</a>
+            <a href="">Setups</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+        <div class="nav-hamburger">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="nav-links-mob">
+            <a class="selected" href="">Home</a>
+            <a href="">Equipment</a>
+            <a href="">Setups</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    </nav>
+
+    {% block body %}
+
+    {% endblock %}
+   
+    
+    <footer class="footer">
+        <p class="footer-text"><span>Copyright © 2021 Jaffa London</span>
+            All Rights Reserved <br>
+            Site by www.andylittleweb.con <br>
+            Graphics by barry bloggs</p>
+            <img class="footer-logo" src="{% static 'main/images/jaffa-circle.png' %}" alt="">
+            <div class="footer-links-container">
+                <div class="footer-links">
+                    <a class="footer-email"href="mailto:james@jaffalondon.com"><i class="fas fa-envelope"></i>Email</a>
+                    <a class="footer-number" href=""><i class="fas fa-phone"></i>+44 7989 634879</a>
+                    <a class="footer-insta" href="https://www.instagram.com/jaffalondon"><i class="fab fa-instagram"></i>Instagram</a>
+                </div>
+            </div>
+                
+        </footer>
+
+</body>
+</html>

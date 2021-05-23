@@ -6,6 +6,9 @@
 
 $orange: #f35d2a;
 $hero-height: 80vh;
+$footer-padding: 4rem;
+$footer-block: 280px;
+$offWhite: rgba(white, .8);
 
 nav {
     position: sticky;
@@ -24,7 +27,7 @@ nav {
         max-width: 908px;
         width: 50%;
         height: 93px;
-        background-image: url(banner-sm.jpg);
+        background-image: url(../images/banner-sm.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-origin: right;
@@ -43,12 +46,33 @@ nav {
             }
         }
 
+        &-mob {
+            position: absolute;
+            top: 150px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: white;
+            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 7vw, 2.5rem);
+            line-height: 2.2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            display: none;
+            
+            
+            
+        }
+
     }
     .nav-mascot {
         position: absolute;
         top: 6px;
         left: 12%;
         max-width: 100%;
+        width: 30vw;
+        min-width: 7.5rem;
         
     }
     .nav-insta {
@@ -94,7 +118,7 @@ h3 {
 body {
     margin: 0;
     //height: 150em;
-    background-color: black;
+    background-color: $orange;
     overflow: visible;
     &.locked {
         overflow: hidden;
@@ -119,13 +143,13 @@ img {
     height: $hero-height;
 }
 #orange {
-    background-image: url(orange.jpg);
+    background-image: url(../images/orange.jpg);
     background-color: $orange;
     
 }
 #white {
     position: relative;
-    background-image: url(white.jpg);  
+    background-image: url(../images/white.jpg);  
     background-color: white;
     display: flex;
     align-items: center;
@@ -144,7 +168,6 @@ img {
         display: block;
         font-size: 3.3rem;
         font-size: clamp(2.1rem, 4.5vw, 3.3rem);
-        //color: rgb(44, 44, 44);
         color: $orange;
         max-width: 41rem;
         width: 90%;
@@ -157,88 +180,84 @@ img {
         span {
             font-size: 4.2rem;
             font-size: clamp(3rem, 6vw, 4.4rem);
-            //color: black;
             color: $orange;
-            line-height: 1.6;
+            line-height: 1;
+            
         }
     }
 }
 
 #black {
-    background-image: url(black.jpg);
+    background-image: url(../images/black.jpg);
     background-color: #000;
 
     
 }
-.contact {
+.footer {
     
+    position: absolute;
+    width: 100%;
+    background-color: $orange;
+    z-index: 400;
     display: flex;
-    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-image: url(contact-bg-4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    padding: 1em;
-    height: 17em;
-    width: 100%;
-    border: 5px solid white;
-    border-radius: 6px;   
+    padding: .3em 0;
     
 
-    &-text, &-email, &-number, &-header, &-insta {
-        text-align: center;
+   &-logo {
+        width: 110px;
+        margin-left: auto;
+        
+    }
+    &-text {
+        padding-left: $footer-padding;
+        width: $footer-block;
+        color: rgba(#000, .80);
+        font-size: .7rem;
         line-height: 1.6;
-        max-width: 20rem;
-        margin: 0;
-        color: white;
-        font-size: clamp(.9rem, 4vw, 1.25rem);
-        
+        span {
+            display: block;
+        }
     }
-    
-    &-header {
-        font-size: 2.3em;
-        font-size: clamp(1.8rem, 6.5vw, 2.6rem);
-    }
-
-    &-container {
-        position: absolute;
-        width: 80%;
-        //top: 150em;
-        margin-left: 50%;
-        transform: translateX(-50%);
-        z-index: 400;
         
-        
+    &-links-container {
+        margin-left: auto;
+        width: $footer-block;
+        padding: .3em $footer-padding .3em 0;
     }
     &-links {
-        max-width: 29rem;
-        width: 90%;
+        margin: 0 0 0 auto;
+        width: fit-content;
+        padding: .4em 0;
+        line-height: 1.6;
+        font-size: .9rem;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-        /////////////////////////////
-        @media screen and (max-width: 42em) {
-            flex-direction: column;
-            > * {
-                margin-top: .3em;
-            }
-        /////////////////////////////
+        justify-content: space-around;
+        color: rgba(#000, .80);
+        flex-direction: column;
+        
+        a {
+            
+            margin: .3em 0;
+            display: flex;
+            align-items: center;
         }
+
+        }
+    
         
         a {
             &:hover {
-                color: black;
+                color: $offWhite;
                 .fas, .fab {
-                    color: black;
+                    color: $offWhite;
                 }
             }
             .fas, .fab {
                 display: inline-block;
-                font-size: 1.5rem;
-                color: white;
+                font-size: 1.3rem;
+                color: rgba(#000, .80);
                 margin-right: .4em;
 
             }
@@ -248,7 +267,7 @@ img {
             transition: color 300ms ease-in-out;
         }
     }
-}
+
 .overlay {
     position: fixed;
     top: 0;
@@ -269,6 +288,40 @@ img {
 ////mobile
 
 @media screen and (max-width: 51.5em) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        &-text {
+            order: 2;
+            margin: 0 auto;
+            text-align: center;
+            padding: .3em 0 .3em 0;
+            font-size: .6em;
+            span {
+                display: inline;
+                z-index: 999;
+            }
+        }
+        &-logo {
+            order: -1;
+            margin: 0 auto;
+        }
+        &-links {
+            position: relative;
+            order: 3;
+            margin: 0 auto;
+            
+            a {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+        &-links-container {
+            position: relative;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
     .nav, nav {
         &-links {
             display: none !important;
@@ -291,6 +344,10 @@ img {
     
             // Hamburger Open
         &.open {
+
+            .nav-links-mob {
+                display: flex;
+            }
 
             .nav-hamburger {     
                 > span:first-child {
