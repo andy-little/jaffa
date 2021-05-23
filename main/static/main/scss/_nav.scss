@@ -1,0 +1,143 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    z-index: 500;
+    pointer-events: none;
+    transition: opacity 300ms ease-in-out;
+    &.active {
+        opacity: 1;
+    }
+    
+}
+.nav {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $orange;
+    border-bottom: 5px solid black;
+    z-index: 600;
+    font-size: 1em;
+    font-size: clamp(1em, 1.5vw, 1.3em);
+    &-img {
+        max-width: 908px;
+        width: 50%;
+        height: 93px;
+        background-image: url(../images/banner-sm.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-origin: right;
+        border-right: 5px solid black;
+    }
+    &-links {
+        display: flex;
+        justify-content: space-around;
+        width: 40%;
+        margin-right: 5%;
+        
+        a{
+            transition: color 300ms ease-in-out;
+            &:hover, &.selected {
+                color: white;
+            }
+        }
+
+        &-mob {
+            position: absolute;
+            top: 150px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            color: white;
+            font-size: 1.5rem;
+            font-size: clamp(1.5rem, 7vw, 2.5rem);
+            line-height: 2.2;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            display: none;          
+        }
+    }
+    &-mascot {
+        position: absolute;
+        top: 6px;
+        left: 12%;
+        max-width: 100%;
+        width: 30vw;
+        min-width: 7.5rem;
+        
+    }
+    &-insta {
+        position: relative;
+        margin-left: 100%;
+        transform: translateY(-110%);
+        display: inline-block;
+        font-size: 2.5rem;
+        color: white;
+        transition: color 300ms ease-in-out;
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+//MOBILE
+
+@media screen and (max-width: 51.5em) {
+    .nav {
+        &-links {
+            display: none !important;
+        }
+        &-hamburger {
+            margin-right: 2em;
+    
+            > span {
+                display: block;
+                width: 26px;
+                height: 2px;
+                background:white;
+                transform-origin: 3px 1px;
+                margin-bottom: 5px;
+                transition: 250ms ease-in-out;
+            }
+        }
+    
+        // Hamburger Open
+        &.open {
+            
+            .nav-links-mob {
+                display: flex;
+            }
+
+            .nav-hamburger {     
+                > span:first-child {
+                    transform: rotate(45deg);
+                }
+    
+                > span:nth-child(2) {
+                    opacity: 0;
+                }
+    
+                > span:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+// if window is short let nav scroll away so doesn't obstruct view
+@media screen and (max-height: 33em) {
+    nav {
+        position: static;
+    }
+
+}

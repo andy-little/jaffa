@@ -4,3 +4,6 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'main/index.html')
 
+def setups(request):
+    return render(request, 'main/setups.html')
+

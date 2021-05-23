@@ -1,0 +1,43 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+<section class="setups-header">
+    <h1 class="setups-header-title">SETUPS</h1>
+    <p class="setups-header-text">Our most popular setups. Prices are for equipment rental only. Click below for a full quote including an engineer.</p>
+    <a href="#" class="setups-header-btn btn">QUOTE</a>
+    <img class="setups-header-img" src="{% static 'main/images/digi.png' %}" alt="Damn good digi">
+</section>
+
+<main class="setups">
+
+    <div class="grid">
+        <div class="card-container">
+            <div class="card">
+                <div class="card-img card-img-1"></div>
+                <div class="card-content"></div>
+                <div class="btn">BOOK</div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-content"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-content"></div>
+                <div class="btn"></div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+{% endblock %}

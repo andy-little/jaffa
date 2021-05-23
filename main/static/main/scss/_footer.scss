@@ -1,0 +1,108 @@
+
+.footer {
+    
+    position: absolute;
+    width: 100%;
+    background-color: $orange;
+    z-index: 400;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .3em 0;
+    
+
+   &-logo {
+        width: 110px;
+        margin-left: auto;
+        
+    }
+    &-text {
+        padding-left: $footer-padding;
+        width: $footer-block;
+        color: rgba(#000, .80);
+        font-size: .7rem;
+        line-height: 1.6;
+        span {
+            display: block;
+        }
+    }
+        
+    &-links-container {
+        margin-left: auto;
+        width: $footer-block;
+        padding: .3em $footer-padding .3em 0;
+    }
+
+    &-links {
+        margin: 0 0 0 auto;
+        width: fit-content;
+        padding: .4em 0;
+        line-height: 1.6;
+        font-size: .9rem;
+        display: flex;
+        justify-content: space-around;
+        color: rgba(#000, .80);
+        flex-direction: column;
+        
+        a {
+            margin: .3em 0;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                color: $offWhite;
+                .fas, .fab {
+                    color: $offWhite;
+                }
+            }
+            .fas, .fab {
+                display: inline-block;
+                font-size: 1.3rem;
+                color: rgba(#000, .80);
+                margin-right: .4em;
+    
+            }
+        }
+
+    }
+        
+    a, .fab, .fas {
+        transition: color 300ms ease-in-out;
+    }
+}
+
+// MOBILE
+
+@media screen and (max-width: 51.5em) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        &-text {
+            order: 2;
+            margin: 0 auto;
+            text-align: center;
+            padding: .3em 0 .3em 0;
+            font-size: .6em;
+            span {
+                display: inline;
+                z-index: 999;
+            }
+        }
+        &-logo {
+            order: -1;
+            margin: 0 auto;
+        }
+        &-links {
+            order: 3;
+            margin: 0 auto;
+            
+            a {
+                justify-content: center;
+            }
+        }
+        &-links-container {
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+}

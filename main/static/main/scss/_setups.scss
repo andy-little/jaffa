@@ -1,0 +1,74 @@
+$card-img-h: 20rem;
+$card-img-w: 20rem;
+
+main {
+    padding: 3rem .8rem;
+}
+.setups {
+    background-color: black;
+
+    &-header {        
+        background-color: $pale;
+        padding: 3rem .8rem;
+
+        &-title {
+            display: inline-block;
+            margin: 0;
+            letter-spacing: -8px;
+            color: $orange;
+            font-size: 5rem;
+            font-weight: 900;
+            -webkit-text-stroke: 2px black;
+            text-shadow:
+                    -1px -1px 0 #000,  
+                    1px -1px 0 #000,
+                    -1px 1px 0 #000,
+                    1px 1px 0 #000;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 4px;
+                background-color: black;
+                position: relative;
+            }
+        }
+        &-text {
+            font-weight: 200;
+            max-width: 30rem;
+            line-height: 1.6;
+            font-size: 1.2rem;
+        }
+        &-img {
+            width: 20rem;
+            max-width: 50%;
+        }
+        &-btn {
+            margin-bottom: 2em;
+        }
+    }
+
+
+
+    .card {
+        background-color: $orange;
+        border-radius: 8px;
+        max-width: 80%;
+        width: 30rem;
+        margin: 2rem;
+        &-img {
+            position: relative;
+            display: block;
+            height: 20rem;
+            width: 16rem;
+            &-1 {
+                background-image: url(../images/setup-1.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+        }
+    }
+
+}
