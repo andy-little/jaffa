@@ -37,7 +37,7 @@
         display: block;
         font-size: 3.3rem;
         font-size: clamp(2.1rem, 4.5vw, 3.3rem);
-        color: $orange;
+        color: black;
         max-width: 41rem;
         width: 90%;
         text-align: center;
@@ -49,7 +49,6 @@
         span {
             font-size: 4.2rem;
             font-size: clamp(3rem, 6vw, 4.4rem);
-            color: $orange;
             line-height: 1; 
         }
     }

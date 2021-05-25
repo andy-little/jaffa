@@ -7,4 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.classList.toggle('active');
         document.querySelector('body').classList.toggle('locked');
     } 
+    const mascot = document.querySelector('.nav-mascot');
+    window.addEventListener('scroll', () => {
+        
+        if (window.pageYOffset > 50) {
+            mascot.classList.add('close');
+        } else {
+            mascot.classList.remove('close');
+        }
+        
+        
+    });
 })
+

@@ -71,8 +71,14 @@
         top: 6px;
         left: 12%;
         max-width: 100%;
-        width: 30vw;
+        width: 20vw;
         min-width: 7.5rem;
+        transition: transform .8s ease-in-out;
+        transform-origin: top;
+
+        &.close {
+            transform: scale(.6);
+        }
         
     }
     &-insta {
