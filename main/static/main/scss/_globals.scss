@@ -1,60 +1,133 @@
-
 html {
-    margin: 0;
+  margin: 0;
 }
-*, *::after, *::before {
-    box-sizing: border-box;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
-a, a:hover, a:visited {
-    
-    text-decoration: none;
-    font-family: 'Roboto', sans-serif;
-    color: inherit;
-    
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: inherit;
 }
-h1, h2, h3, h4, p {
-    font-family: 'Roboto', sans-serif;
+h3,
+h4,
+p,
+li {
+  font-family: "Roboto", sans-serif;
 }
-h1, h2 {
-    font-family: 'MADE GoodTime Grotesk', sans-serif;
-    letter-spacing: 4px;
+h1,
+h2 {
+  font-family: "MADE GoodTime Grotesk", sans-serif;
+  letter-spacing: 4px;
 }
 
 h3 {
-    font-size: 1.3em;
-    font-weight: 300;
+  font-size: 1.3em;
+  font-weight: 300;
 }
 body {
-    margin: 0;
-    //height: 150em;
-    background-color: $orange;
-    overflow: visible;
-    &.locked {
-        overflow: hidden;
-    }
+  margin: 0;
+  //height: 150em;
+  background-color: $orange;
+  overflow: visible;
+  &.locked {
+    overflow: hidden;
+  }
 }
 
 img {
-    display: block;
-    max-width: 100%;
-    
+  display: block;
+  max-width: 100%;
 }
 .btn {
-    display: inline-block;
-    padding: .7em 2em;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-    border: 3px solid black;
-    border-radius: 10px;
-    transition: all 250ms ease-in-out;
-    &:hover {
+  display: inline-block;
+  padding: 0.7em 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  border-radius: 10px;
+  transition: all 250ms ease-in-out;
+  &:hover {
+    background-color: black;
+    border-color: white;
+    color: white;
+  }
+}
+
+.banner {
+  //MOB
+
+  &-header {
+    background-color: $pale;
+    padding: 3rem 3em;
+    text-align: center;
+
+    &-title {
+      display: inline-block;
+      margin: 0 0.7em 0 0;
+      letter-spacing: -6px;
+      color: $orange;
+      font-size: 4rem;
+      font-size: clamp(3.6rem, 9vw, 5rem);
+      font-weight: 900;
+      -webkit-text-stroke: 2px black;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+        1px 1px 0 #000;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
         background-color: black;
-        border-color: white;
-        color: white;
+        position: relative;
+      }
     }
+    &-text {
+      font-weight: 200;
+      max-width: 25rem;
+      line-height: 1.6;
+      font-size: 1.2rem;
+      margin: 1em auto;
+    }
+    &-img {
+      width: 17rem;
+      max-width: 50%;
+      margin: 0 auto;
+      display: none;
+      &-dig {
+        width: 20rem;
+        transform: rotate(-8deg);
+      }
+    }
+    &-btn {
+      margin-bottom: 2em;
+    }
+
+    // DESKTOP
+    @media screen and (min-width: 51.5em) {
+      display: flex;
+      justify-content: center;
+      text-align: left;
+      align-items: center;
+      padding-top: 5rem;
+
+      &-img {
+        margin: 0;
+        display: block;
+      }
+      &-text {
+        margin: 2em 2em 2em 0;
+      }
+    }
+  }
 }

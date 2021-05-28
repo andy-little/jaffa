@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } 
     const mascot = document.querySelector('.nav-mascot');
     window.addEventListener('scroll', () => {
-        
-        if (window.pageYOffset > 50) {
-            mascot.classList.add('close');
+
+        if (window.innerWidth > 900) {
+            mascot.style.width = `calc(171px - ${pageYOffset / 9}px)`;
         } else {
-            mascot.classList.remove('close');
+            mascot.style.width = `calc(20vw - ${pageYOffset / 9}px)`;
         }
-        
+
         
     });
 })

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'main/scss/style.css' %}">
     <link rel="stylesheet" href="{% static 'main/scss/all.css' %}">
     <script src="{% static 'main/all.js' %}"></script>
+    {% block script %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -21,20 +22,20 @@
        
         <div class="nav-links">
             <a class="selected" href="{% url 'index' %}">Home</a>
-            <a href="">Equipment</a>
+            <a href="{% url 'equipment' %}">Equipment</a>
             <a href="{% url 'setups' %}">Setups</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
         </div>
         <div class="nav-hamburger">
             <span></span><span></span><span></span>
         </div>
         <div class="nav-links-mob">
             <a class="selected" href="{% url 'index' %}">Home</a>
-            <a href="">Equipment</a>
+            <a href="{% url 'equipment' %}">Equipment</a>
             <a href="{% url 'setups' %}">Setups</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
         </div>
     </nav>
 

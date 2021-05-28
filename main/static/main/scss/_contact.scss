@@ -1,0 +1,36 @@
+.contact {
+  background-color: black;
+  color: white;
+  font-family: "roboto", sans-serif;
+}
+form {
+  display: block;
+  max-width: 47rem;
+  margin: 0 auto;
+
+  label {
+    text-align: center;
+    line-height: 2.5;
+  }
+  input,
+  textarea {
+    font-size: 1.1rem;
+    border-radius: 8px;
+    width: 100%;
+    padding: 0.3rem;
+    font-family: "roboto", sans-serif;
+  }
+  #message {
+    width: 100%;
+    height: 10rem;
+  }
+  .form-control {
+    display: inline;
+    width: 48%;
+  }
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+}

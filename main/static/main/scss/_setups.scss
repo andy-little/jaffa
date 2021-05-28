@@ -2,196 +2,132 @@ $card-img-h: 20rem;
 $card-img-w: 20rem;
 
 main {
-    padding: 2.5rem .8rem;
+  padding: 2.5rem 0.8rem;
 }
+
 .setups {
-    //MOB
-    background-color: black;
-    min-height: 45rem;
+  background-color: black;
+  min-height: 45rem;
+  .card {
+    transition: height 350ms ease-in-out;
+    background-color: $orange;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 100%;
+    max-width: 20rem;
+    height: 24rem;
+    margin: 2rem auto;
+    color: white;
+    text-align: center;
+    overflow: hidden;
 
-    &-header {        
-        background-color: $pale;
-        padding: 3rem 3em;
-        text-align: center;
-
-        &-title {
-            
-            display: inline-block;
-            margin: 0;
-            letter-spacing: -6px;
-            color: $orange;
-            font-size: 4rem;
-            font-size: clamp(3.6rem, 9vw, 5rem);
-            font-weight: 900;
-            -webkit-text-stroke: 2px black;
-            text-shadow:
-                    -1px -1px 0 #000,  
-                    1px -1px 0 #000,
-                    -1px 1px 0 #000,
-                    1px 1px 0 #000;
-
-            &::after {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 4px;
-                background-color: black;
-                position: relative;
-            }
-        }
-        &-text {
-            font-weight: 200;
-            max-width: 25rem;
-            line-height: 1.6;
-            font-size: 1.2rem;
-            margin: 1em auto;
-        }
-        &-img {
-            width: 17rem;
-            max-width: 50%;
-            margin: 0 auto;
-            display: none;
-        }
-        &-btn {
-            margin-bottom: 2em;
-        }
-       
-
-        // DESKTOP
-        @media screen and (min-width: 51.5em) {
-            display: flex;
-            justify-content: center;
-            text-align: left;
-            align-items: center;
-            padding-top: 5rem;
-
-            &-img {
-                margin: 0;
-                display: block;
-            }
-            &-text {
-                margin: 2em 2em 2em 0;
-            }
-        }
+    &-price,
+    &-description {
+      opacity: 0;
+      transition: opacity 400ms ease-in-out 150ms;
     }
 
+    &-img {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      border-radius: 8px;
+      height: 18rem;
+      max-width: 18rem;
+      transform-origin: top;
+      transition: transform 300ms ease-in-out;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      &-1 {
+        background-image: url(../images/setup-1.jpg);
+      }
+      &-2 {
+        background-image: url(../images/setup-2.jpg);
+      }
+      &-3 {
+        background-image: url(../images/setup-3.jpg);
+      }
 
-
-    .card {
-        transition: height 300ms ease-in-out;
-        background-color: $orange;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(transparent, black);
         border-radius: 8px;
-        padding: 1rem;
-        max-width: 100%;
-        max-width: 22rem;
-        height: 26rem;
-        margin: 2rem auto;
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+    }
+    &-content {
+      transition: transform 300ms ease-in-out;
+    }
+    &-title {
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    &-subtitle {
+      margin-top: 0;
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+    &-price {
+      font-family: "roboto", sans-serif;
+      letter-spacing: 0;
+    }
+    &-description {
+      line-height: 1.6;
+      text-align: center;
+      font-weight: 100;
+      font-size: 0.9rem;
+    }
+    &-btn {
+      color: black;
+      transition: color 250ms ease-in-out;
+      &:hover {
         color: white;
-        text-align: center;
-        overflow: hidden;
-
-        &-price, &-description {
-            opacity: 0;
-            transition: opacity 400ms ease-in-out;
-        }
-
-        &-img {
-            position: relative;
-            display: block;
-            margin: 0 auto;
-            border-radius: 8px;
-            height: 20rem;
-            max-width: 20rem;
-            &-1 {
-                background-image: url(../images/setup-1.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
-            }
-
-            &::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                background-image: linear-gradient(transparent, black );
-                border-radius: 8px;
-                opacity: 0;
-                transition: opacity 300ms ease-in-out;
-            }
-        }
+      }
+    }
+    &:hover {
+      .card {
         &-content {
-            transition: transform 300ms ease-in-out;
-            
+          transform: translateY(-10.35rem);
         }
-        &-title {
-            font-weight: 700;
-            line-height: 1;
-            text-transform: uppercase;
-            font-size: 1.4rem;
-            margin-bottom: .2rem;
+        &-img {
+          transform: scale(0.87);
+          &::after {
+            //image overlay
+            opacity: 0.7;
+          }
         }
-
-        &-subtitle {
-            margin-top: 0;
-            font-size: 1.1rem;
-            font-weight: 400;
-        }
-        &-price {
-            font-family: 'roboto', sans-serif;
-            letter-spacing: 0;
-        }
+        &-price,
         &-description {
-            line-height: 1.6;
-            text-align: center;
-            font-weight: 100;
-            font-size: .9rem;
+          opacity: 1;
         }
-        &-btn {
-            color: black;
-            transition: color 250ms ease-in-out;
-            &:hover {
-                color: white;
-            }
-        }
-        &:hover {
-
-            height: 34rem;
-            .card {
-                
-
-                &-content {
-                    transform: translateY(-7.9rem);
-                }
-                &-img {
-                    &::after {
-                        //image overlay
-                        opacity: .7;
-                    }
-                }
-                &-price, &-description {
-                    opacity: 1;
-                    
-                }
-
-            }
-        }
-
-
+      }
     }
+  }
 
-    
-    @media screen and (min-width: 48.125rem) {
-    //DESKTOP 
-    
-        .grid {
-            max-width: 88rem;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-            grid-gap: 2.5em;
-        }
+  .card-2:hover {
+    height: 30rem;
+  }
+
+  @media screen and (min-width: 48.125rem) {
+    //DESKTOP
+
+    .grid {
+      max-width: 80rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+      grid-gap: 2.5em;
     }
+  }
 }

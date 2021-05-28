@@ -7,3 +7,14 @@ def index(request):
 def setups(request):
     return render(request, 'main/setups.html')
 
+def equipment(request):
+    return render(request, 'main/equipment.html')
+
+
+def about(request):
+    return render(request, 'main/about.html')
+
+
+def contact(request):
+    return render(request, 'main/contact.html')
+

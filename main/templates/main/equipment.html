@@ -1,0 +1,58 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block title %}Equipment{% endblock %}
+
+{% block body %}
+
+<section class="banner-header">
+    <div class="header-left">
+        <h1 class="banner-header-title header-title-long">EQUIPMENT</h1>
+        <p class="banner-header-text">All digital workflow equipment available is top spec and serviced after every shoot. I offer a free 1 month shoot backup if required. Priced as complete setups so i always have everything we need. Camera systems are not yet available, but will be soon. please let me know if you need and I can source externally.</p>
+        <!-- <a href="#" class="setups-header-btn btn">QUOTE</a> -->
+    </div>
+    <img class="banner-header-img" src="{% static 'main/images/equip-symbol.png' %}" alt="logo">
+</section>
+<main class="equipment">
+    <div class="equipment-container">
+        
+        <div class="">
+            <h3 class="equipment-category">Computers</h3>
+            <ul>
+                <li>
+                    MacBook Pro 16" 2.4GHz 8-core i9 Processor:<br>64GB 2666MHz memory, 2TB SSD
+                </li>
+            </ul>
+        </div>
+
+        <div class="">
+            <h3 class="equipment-category">Monitors</h3>
+            <ul>
+                <li>Eizo CG2420  24 inch</li>
+                <li>Eizo CG2730 27 inch</li>
+                <li>Ipad w/ capture pilot + screen mirror </li>
+            </ul>
+        </div>
+
+        <div class="">
+            <h3 class="equipment-category">Workstations</h3>
+            <ul>
+                <li>Inovativ Voyager EVO digital workflow cart</li>
+                <li>Lowboy satellite monitor kit w/ keyboard + mouse</li>
+                <li>iWorkcase location kit w/ tripod </li>
+            </ul>
+        </div>
+
+        <div class="">
+            <h3 class="equipment-category">Accessories</h3>
+            <ul>
+                <li>Caldigit ts3 plus usb c hub</li>
+                <li>Ipad w/ capture pilot</li>
+                <li>Wacom Intuos Pro M</li>
+                <li>HyperJuice 100w usb c battery</li>
+            </ul>
+        </div>
+
+    </div>
+</main>
+
+{% endblock %}
