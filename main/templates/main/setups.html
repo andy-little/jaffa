@@ -1,6 +1,6 @@
 {% extends "main/layout.html" %}
 {% load static %}
-{% block title %}Setups{% endblock %}
+{% block title %}Setups | Jaffa London{% endblock %}
 {% block script %}<script src="{% static 'main/setups.js' %}"></script>{% endblock %}
 
 {% block body %}
@@ -9,7 +9,7 @@
     <div class="header-left">
         <h1 class="banner-header-title">SETUPS</h1>
         <p class="banner-header-text">Our most popular setups. Prices are for equipment rental only. Click below for a full quote including an engineer.</p>
-        <a href="#" class="banner-header-btn btn">QUOTE</a>
+        <a href="{% url 'contact' %}" class="banner-header-btn btn">QUOTE</a>
     </div>
     <img class="banner-header-img" src="{% static 'main/images/digi.png' %}" alt="Damn good digi">
 </section>
