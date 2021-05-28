@@ -549,10 +549,8 @@ main {
   overflow: hidden;
 }
 
-.setups .card-price, .setups .card-description {
-  opacity: 0;
-  -webkit-transition: opacity 400ms ease-in-out 150ms;
-  transition: opacity 400ms ease-in-out 150ms;
+.setups .card-2 {
+  height: 30rem;
 }
 
 .setups .card-img {
@@ -643,26 +641,63 @@ main {
   color: white;
 }
 
-.setups .card:hover .card-content {
+.setups .card-content {
   -webkit-transform: translateY(-10.35rem);
           transform: translateY(-10.35rem);
 }
 
-.setups .card:hover .card-img {
+.setups .card-img {
   -webkit-transform: scale(0.87);
           transform: scale(0.87);
 }
 
-.setups .card:hover .card-img::after {
+.setups .card-img::after {
   opacity: 0.7;
 }
 
-.setups .card:hover .card-price, .setups .card:hover .card-description {
+.setups .card-price, .setups .card-description {
   opacity: 1;
 }
 
-.setups .card-2:hover {
-  height: 30rem;
+@media (hover) {
+  .setups .card-price,
+  .setups .card-description {
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in-out 150ms;
+    transition: opacity 400ms ease-in-out 150ms;
+  }
+  .setups .card-content {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+  }
+  .setups .card-img {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  .setups .card-img::after {
+    opacity: 0;
+  }
+  .setups .card:hover .card-content {
+    -webkit-transform: translateY(-10.35rem);
+            transform: translateY(-10.35rem);
+  }
+  .setups .card:hover .card-img {
+    -webkit-transform: scale(0.87);
+            transform: scale(0.87);
+  }
+  .setups .card:hover .card-img::after {
+    opacity: 0.7;
+  }
+  .setups .card:hover .card-price,
+  .setups .card:hover .card-description {
+    opacity: 1;
+  }
+  .setups .card-2 {
+    height: 24rem;
+  }
+  .setups .card-2:hover {
+    height: 30rem;
+  }
 }
 
 @media screen and (min-width: 48.125rem) {

@@ -16,16 +16,13 @@ main {
     max-width: 100%;
     max-width: 20rem;
     height: 24rem;
+    &-2 {
+      height: 30rem;
+    }
     margin: 2rem auto;
     color: white;
     text-align: center;
     overflow: hidden;
-
-    &-price,
-    &-description {
-      opacity: 0;
-      transition: opacity 400ms ease-in-out 150ms;
-    }
 
     &-img {
       position: relative;
@@ -95,28 +92,61 @@ main {
         color: white;
       }
     }
-    &:hover {
-      .card {
-        &-content {
-          transform: translateY(-10.35rem);
-        }
-        &-img {
-          transform: scale(0.87);
-          &::after {
-            //image overlay
-            opacity: 0.7;
-          }
-        }
-        &-price,
-        &-description {
-          opacity: 1;
-        }
+
+    &-content {
+      transform: translateY(-10.35rem);
+    }
+    &-img {
+      transform: scale(0.87);
+      &::after {
+        //image overlay
+        opacity: 0.7;
       }
     }
+    &-price,
+    &-description {
+      opacity: 1;
+    }
   }
+  @media (hover) {
+    .card-price,
+    .card-description {
+      opacity: 0;
+      transition: opacity 400ms ease-in-out 150ms;
+    }
 
-  .card-2:hover {
-    height: 30rem;
+    .card-content {
+      transform: translateY(0rem);
+    }
+    .card-img {
+      transform: scale(1);
+      &::after {
+        //image overlay
+        opacity: 0;
+      }
+    }
+    .card:hover {
+      .card-content {
+        transform: translateY(-10.35rem);
+      }
+      .card-img {
+        transform: scale(0.87);
+        &::after {
+          //image overlay
+          opacity: 0.7;
+        }
+      }
+      .card-price,
+      .card-description {
+        opacity: 1;
+      }
+    }
+    .card-2 {
+      height: 24rem;
+      &:hover {
+        height: 30rem;
+      }
+    }
   }
 
   @media screen and (min-width: 48.125rem) {
