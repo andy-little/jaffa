@@ -68,13 +68,19 @@ img {
 
   &-header {
     background-color: $pale;
-    padding: 3rem 3em;
+    padding: 3rem 2em;
     text-align: center;
+    &.align-left {
+      text-align: left;
+      .banner-header-text {
+        margin-left: 0;
+      }
+    }
 
     &-title {
       display: inline-block;
-      margin: 0 0.7em 0 0;
-      letter-spacing: -6px;
+      margin: 0 0 0 0;
+      letter-spacing: -4px;
       color: $orange;
       font-size: 4rem;
       font-size: clamp(3.6rem, 9vw, 5rem);
@@ -127,6 +133,9 @@ img {
       }
       &-text {
         margin: 2em 2em 2em 0;
+      }
+      &-title {
+        margin-right: 0.7em;
       }
     }
   }

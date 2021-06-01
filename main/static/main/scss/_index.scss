@@ -1,10 +1,6 @@
 #orange {
   background-image: url(../images/orange.jpg);
   background-color: $orange;
-
-  @media screen and (max-width: 36rem) {
-    background-image: url(../images/orange-sm.jpg);
-  }
 }
 
 #white {
@@ -14,10 +10,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  @media screen and (max-width: 36rem) {
-    background-image: url(../images/white-sm.jpg);
-  }
 
   &::after {
     content: "";
@@ -53,9 +45,6 @@
 #black {
   background-image: url(../images/black.jpg);
   background-color: #000;
-  @media screen and (max-width: 36rem) {
-    background-image: url(../images/black-sm.jpg);
-  }
 }
 
 .index-bg {
@@ -67,4 +56,13 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   height: $hero-height;
+}
+
+@media (pointer: none), (pointer: coarse) {
+  #black {
+    display: none;
+  }
+  .index-bg {
+    background-attachment: unset;
+  }
 }

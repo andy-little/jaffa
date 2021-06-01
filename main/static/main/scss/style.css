@@ -1,3 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@font-face {
+  font-family: "MADE GoodTime Grotesk";
+  src: url("/static/main/fonts/MADEGoodTimeGrotesk.woff2") format("woff2"), url("/static/main/fonts/MADEGoodTimeGrotesk.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   margin: 0;
 }
@@ -74,14 +83,22 @@ img {
 
 .banner-header {
   background-color: #DEE2EE;
-  padding: 3rem 3em;
+  padding: 3rem 2em;
   text-align: center;
+}
+
+.banner-header.align-left {
+  text-align: left;
+}
+
+.banner-header.align-left .banner-header-text {
+  margin-left: 0;
 }
 
 .banner-header-title {
   display: inline-block;
-  margin: 0 0.7em 0 0;
-  letter-spacing: -6px;
+  margin: 0 0 0 0;
+  letter-spacing: -4px;
   color: #f35d2a;
   font-size: 4rem;
   font-size: clamp(3.6rem, 9vw, 5rem);
@@ -145,6 +162,9 @@ img {
   .banner-header-text {
     margin: 2em 2em 2em 0;
   }
+  .banner-header-title {
+    margin-right: 0.7em;
+  }
 }
 
 .overlay {
@@ -155,7 +175,7 @@ img {
   left: 0;
   background-color: black;
   opacity: 0;
-  z-index: 500;
+  z-index: 400;
   pointer-events: none;
   -webkit-transition: opacity 300ms ease-in-out;
   transition: opacity 300ms ease-in-out;
@@ -182,7 +202,7 @@ img {
   width: 100%;
   background-color: #f35d2a;
   border-bottom: 5px solid black;
-  z-index: 600;
+  z-index: 400;
   font-size: 1em;
   font-size: clamp(1em, 1.5vw, 1.3em);
 }
@@ -236,6 +256,11 @@ img {
       -ms-flex-direction: column;
           flex-direction: column;
   display: none;
+  z-index: 600;
+}
+
+.nav-links-mob a.selected {
+  color: #f35d2a;
 }
 
 .nav-mascot {
@@ -244,7 +269,7 @@ img {
   left: 12%;
   max-width: 100%;
   width: 20vw;
-  min-width: 7.5rem;
+  min-width: 6.5rem;
 }
 
 .nav-insta {
@@ -269,6 +294,7 @@ img {
   }
   .nav-hamburger {
     margin-right: 2em;
+    z-index: 600;
   }
   .nav-hamburger > span {
     display: block;
@@ -299,21 +325,20 @@ img {
   }
 }
 
-@media screen and (max-height: 33em) {
-  nav {
+@media screen and (max-height: 30em) {
+  .nav {
     position: static;
+  }
+  .nav-links-mob {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
 #orange {
   background-image: url(../images/orange.jpg);
   background-color: #f35d2a;
-}
-
-@media screen and (max-width: 36rem) {
-  #orange {
-    background-image: url(../images/orange-sm.jpg);
-  }
 }
 
 #white {
@@ -329,12 +354,6 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-@media screen and (max-width: 36rem) {
-  #white {
-    background-image: url(../images/white-sm.jpg);
-  }
 }
 
 #white::after {
@@ -373,12 +392,6 @@ img {
   background-color: #000;
 }
 
-@media screen and (max-width: 36rem) {
-  #black {
-    background-image: url(../images/black-sm.jpg);
-  }
-}
-
 .index-bg {
   top: 0;
   left: 0;
@@ -390,11 +403,20 @@ img {
   height: 80vh;
 }
 
+@media (pointer: none), (pointer: coarse) {
+  #black {
+    display: none;
+  }
+  .index-bg {
+    background-attachment: unset;
+  }
+}
+
 .footer {
   position: absolute;
   width: 100%;
   background-color: #f35d2a;
-  z-index: 400;
+  z-index: 300;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -403,7 +425,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: .3em 0;
+  padding: 0.3em 0;
 }
 
 .footer-logo {
@@ -415,7 +437,7 @@ img {
   padding-left: 4rem;
   width: 280px;
   color: rgba(0, 0, 0, 0.8);
-  font-size: .7rem;
+  font-size: 0.7rem;
   line-height: 1.6;
 }
 
@@ -434,9 +456,9 @@ img {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: .4em 0;
+  padding: 0.4em 0;
   line-height: 1.6;
-  font-size: .9rem;
+  font-size: 0.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,7 +472,7 @@ img {
 }
 
 .footer-links a {
-  margin: .3em 0;
+  margin: 0.3em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -463,18 +485,22 @@ img {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-links a:hover .fas, .footer-links a:hover .fab {
+.footer-links a:hover .fas,
+.footer-links a:hover .fab {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-links a .fas, .footer-links a .fab {
+.footer-links a .fas,
+.footer-links a .fab {
   display: inline-block;
   font-size: 1.3rem;
   color: rgba(0, 0, 0, 0.8);
-  margin-right: .4em;
+  margin-right: 0.4em;
 }
 
-.footer a, .footer .fab, .footer .fas {
+.footer a,
+.footer .fab,
+.footer .fas {
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
 }
@@ -495,8 +521,8 @@ img {
             order: 2;
     margin: 0 auto;
     text-align: center;
-    padding: .3em 0 .3em 0;
-    font-size: .6em;
+    padding: 0.3em 0 0.3em 0;
+    font-size: 0.6em;
   }
   .footer-text span {
     display: inline;
@@ -718,6 +744,7 @@ main {
 
 .equipment {
   background-color: black;
+  padding-left: 2em;
 }
 
 .equipment-container {
@@ -743,7 +770,7 @@ main {
 }
 
 .equipment ul {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   list-style: none;
   color: white;
   font-size: 1rem;
@@ -759,7 +786,8 @@ main {
 }
 
 .about-banner-header-title {
-  margin: 0 0.7em 0 0;
+  max-width: 25rem;
+  margin: 0 auto;
   letter-spacing: -6px;
   color: #f35d2a;
   font-size: 4rem;
@@ -767,7 +795,6 @@ main {
   font-weight: 900;
   -webkit-text-stroke: 1px black;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-  text-align: center;
 }
 
 .about-banner-header-title::after {
@@ -814,6 +841,7 @@ main {
   }
   .about-banner-header-title {
     text-align: left;
+    margin: 0 0.7em 0 0;
   }
   .about-banner-header-img {
     margin: 0;
@@ -866,18 +894,21 @@ form {
 }
 
 form label {
+  font-size: 1.15rem;
   text-align: center;
   line-height: 2.5;
 }
 
 form input,
 form textarea {
+  outline: none;
   font-size: 1.1rem;
   border-radius: 8px;
   width: 100%;
-  padding: 0.3rem;
+  padding: 0.4rem;
   font-family: "roboto", sans-serif;
   margin-bottom: 1rem;
+  border: none;
 }
 
 form #message {
@@ -902,11 +933,36 @@ form .form-row {
 .contact-btn {
   display: block;
   margin: 1.5rem auto 1rem;
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 37em) {
   form .form-row {
     display: block;
   }
+}
+
+.message-container {
+  display: block;
+  padding: 2rem;
+  background-color: #141414;
+  max-width: 35rem;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+.message-container h1 {
+  font-size: 4rem;
+  font-size: clamp(2.7rem, 9vw, 4.5rem);
+  margin: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.message-container p {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
 /*# sourceMappingURL=style.css.map */

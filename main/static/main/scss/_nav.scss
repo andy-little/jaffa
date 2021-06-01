@@ -6,7 +6,7 @@
   left: 0;
   background-color: black;
   opacity: 0;
-  z-index: 500;
+  z-index: 400;
   pointer-events: none;
   transition: opacity 300ms ease-in-out;
   &.active {
@@ -23,7 +23,7 @@
   width: 100%;
   background-color: $orange;
   border-bottom: 5px solid black;
-  z-index: 600;
+  z-index: 400;
   font-size: 1em;
   font-size: clamp(1em, 1.5vw, 1.3em);
   &-img {
@@ -64,6 +64,12 @@
       display: flex;
       flex-direction: column;
       display: none;
+      z-index: 600;
+      a {
+        &.selected {
+          color: $orange;
+        }
+      }
     }
   }
   &-mascot {
@@ -72,7 +78,7 @@
     left: 12%;
     max-width: 100%;
     width: 20vw;
-    min-width: 7.5rem;
+    min-width: 6.5rem;
   }
 
   &-insta {
@@ -98,6 +104,7 @@
     }
     &-hamburger {
       margin-right: 2em;
+      z-index: 600;
 
       > span {
         display: block;
@@ -134,8 +141,12 @@
 }
 
 // if window is short let nav scroll away so doesn't obstruct view
-@media screen and (max-height: 33em) {
-  nav {
+@media screen and (max-height: 30em) {
+  .nav {
     position: static;
+    &-links-mob {
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }

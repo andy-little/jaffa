@@ -10,6 +10,21 @@
     <script src="{% static 'main/all.js' %}"></script>
     {% block script %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
+
+    <meta name="description" content="James Rawlings Digital Operator London">
+    <meta name="keywords" content="James Rawlings Visual Arts London Digital Operator Eqipment Hire">
+    <meta name="author" content="James Rawlings">
+    <meta property="og:image" content="{% static 'main/images/mascot-logo.png' %}" />
+    <meta property="og:image:width" content="343" />
+    <meta property="og:image:height" content="343" />
+    <meta property="og:title" content="Jaffa London" />
+    <meta property="og:description" content="James Rawlings Digital Operator London" />
+    <meta property="og:url" content="https://www.jaffalondon.com" />
+    
+    <meta charset="UTF-8">
+   
+    <link rel="shortcut icon" type="image/png" href="{% static 'main/images/favicon.png' %}" />
+
 </head>
 <body>
     <div class="overlay"></div>
@@ -21,21 +36,21 @@
         </div>
        
         <div class="nav-links">
-            <a class="selected" href="{% url 'index' %}">Home</a>
-            <a href="{% url 'equipment' %}">Equipment</a>
-            <a href="{% url 'setups' %}">Setups</a>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'contact' %}">Contact</a>
+            <a {% if home %}class="selected"{% endif %} href="{% url 'index' %}">Home</a>
+            <a {% if equipment %}class="selected"{% endif %} href="{% url 'equipment' %}">Equipment</a>
+            <a {% if setups %}class="selected"{% endif %} href="{% url 'setups' %}">Setups</a>
+            <a {% if about %}class="selected"{% endif %} href="{% url 'about' %}">About</a>
+            <a {% if contact %}class="selected"{% endif %} href="{% url 'contact' %}">Contact</a>
         </div>
         <div class="nav-hamburger">
             <span></span><span></span><span></span>
         </div>
         <div class="nav-links-mob">
-            <a class="selected" href="{% url 'index' %}">Home</a>
-            <a href="{% url 'equipment' %}">Equipment</a>
-            <a href="{% url 'setups' %}">Setups</a>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'contact' %}">Contact</a>
+            <a {% if home %}class="selected"{% endif %} href="{% url 'index' %}">Home</a>
+            <a {% if equipment %}class="selected"{% endif %} href="{% url 'equipment' %}">Equipment</a>
+            <a {% if setups %}class="selected"{% endif %} href="{% url 'setups' %}">Setups</a>
+            <a {% if about %}class="selected"{% endif %} href="{% url 'about' %}">About</a>
+            <a {% if contact %}class="selected"{% endif %} href="{% url 'contact' %}">Contact</a>
         </div>
     </nav>
 
@@ -47,14 +62,14 @@
     <footer class="footer">
         <p class="footer-text"><span>Copyright © 2021 Jaffa London</span>
             All Rights Reserved <br>
-            Site by www.andylittleweb.con <br>
+            Site by <a href="https://www.andylittleweb.com">www.andylittleweb.con</a><br>
             Graphics by barry bloggs</p>
             <img class="footer-logo" src="{% static 'main/images/jaffa-circle-sm.png' %}" alt="">
             <div class="footer-links-container">
                 <div class="footer-links">
                     <a class="footer-email"href="mailto:james@jaffalondon.com"><i class="fas fa-envelope"></i>Email</a>
-                    <a class="footer-number" href=""><i class="fas fa-phone"></i>+44 7989 634879</a>
-                    <a class="footer-insta" href="https://www.instagram.com/jaffalondon"><i class="fab fa-instagram"></i>Instagram</a>
+                    <a class="footer-number" href="tel: +447989634879"><i class="fas fa-phone"></i>+44 7989 634879</a>
+                    <a class="footer-insta" target="_blank" href="https://www.instagram.com/jaffalondon"><i class="fab fa-instagram"></i>Instagram</a>
                 </div>
             </div>
                 
