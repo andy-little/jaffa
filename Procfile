@@ -1,1 +1,1 @@
-web: python3 manage.py collectstatic --no-input; gunicorn jaffa.wsgi
+web: gunicorn jaffa.wsgi
