@@ -22,8 +22,8 @@ def contact(request):
     if request.method == 'POST':
         with open('/etc/config.json') as config_file:
             config = json.load(config_file)
-            EMAIL_ADDRESS = config.get('EMAIL_USER') 
-            EMAIL_PASS = config.get('EMAIL_PASS')
+            EMAIL_ADDRESS = config.get('JAFFA_USER') 
+            EMAIL_PASS = config.get('JAFFA_PASS')
             name = request.POST['name']
             sender = request.POST['email']
             contents = request.POST['message']
@@ -36,7 +36,7 @@ def contact(request):
                 body = contents
 
                 msg = f'Subject: {subject}\n\n{body}'
-                smtp.sendmail(EMAIL_ADDRESS, 'andy.little@hotmail.co.uk', f'{msg}\nSender: {sender}')
+                smtp.sendmail(EMAIL_ADDRESS, 'jamesrawlings@live.co.uk', f'{msg}\nSender: {sender}')
         return render(request, 'main/contact.html', {'contact' : True, 'sent' : True})
     return render(request, 'main/contact.html', {'contact' : True})
 
