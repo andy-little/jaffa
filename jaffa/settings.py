@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'd@jja5=hj+jz6u8nbdai)31oei8_le6z09^taj5g+jl*a8ou_g'
+# SECRET_KEY = 'd@jja5=hj+jz6u8nbdai)31oei8_le6z09^taj5g+jl*a8ou_g'
 SECRET_KEY = os.environ.get('JAFFA_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -123,6 +123,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR,  'templates'),
 
 
 """ AWS_ACCESS_KEY_ID = os.environ.get('JAFFA_AWS_ACCESS_KEY_ID')
@@ -132,4 +134,4 @@ AWS_STORAGE_BUCKET_NAME = os.environ.get('JAFFA_AWS_STORAGE_BUCKET_NAME')
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' """
-#STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
