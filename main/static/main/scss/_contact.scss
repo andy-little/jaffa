@@ -2,6 +2,9 @@
   background-color: black;
   color: white;
   font-family: "roboto", sans-serif;
+  &-link {
+    text-decoration: underline;
+  }
 }
 form {
   display: block;
@@ -41,6 +44,9 @@ form {
   display: block;
   margin: 1.5rem auto 1rem;
   font-size: 1rem;
+  &:hover {
+    border: 3px solid white;
+  }
 }
 
 @media screen and (max-width: 37em) {
